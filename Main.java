@@ -10,13 +10,18 @@ public class Main {
         System.out.print("Введите вторую строку: ");
         String second = scanner.nextLine();
 
+        int count = countOccurrences(first, second);
+
+        System.out.println("Количество вхождений: " + count);
+    }
+
+    public static int countOccurrences(String first, String second) {
         int count = 0;
         int index = first.indexOf(second); // ищем первое вхождение
         while (index != -1) {
             count++; // увеличиваем счетчик вхождений
             index = first.indexOf(second, index + 1); // ищем следующее вхождение
         }
-
-        System.out.println("Количество вхождений: " + count);
+        return count;
     }
 }
